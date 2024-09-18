@@ -1,19 +1,16 @@
 fun main() {
-    val intValue: Int = 75
+    print("Enter an integer value: ")
+    val intValue: Int = readln().toInt()
     val doubleValue: Double = intValue.toDouble()
-    println("Integer value: $intValue")
-    println("Converted to Double: $doubleValue")
-    println("------------------------------------")
+    println("Double Value (From Integer): $doubleValue")
 
-    val strValue: String = "123"
-    val integerValue: Int = strValue.toInt()
-    println("String value: $strValue")
-    println("Converted to Integer: $integerValue")
-    println("------------------------------------")
+    print("Enter a string value representing an integer: ")
+    val stringValue: String = readln()
+    val intValueFromString: Int = stringValue.toInt()
+    println("Integer Value (From String): $intValueFromString")
 
-    val stringValue: String = "123"
-    val dblValue: Double = stringValue.toDouble()
-    println("String value: $stringValue")
-    println("Converted to Double: $dblValue")
-
+    print("Enter a string value representing a double: ")
+    val doubleStringValue: String = readln()
+    val doubleValueFromString: Double = doubleStringValue.toDouble()
+    println("Double Value (From String): $doubleValueFromString")
 }

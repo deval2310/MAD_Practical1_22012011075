@@ -1,14 +1,15 @@
 fun main() {
-    val a = arrayOf(57, 90, 10, 13, 14)
-
-    // Display the array elements
-    for (i in a.indices) {
-        println("a[$i]=${a[i]}")
+    val numbers = ArrayList<Int>()
+    print("Enter the number of elements: ")
+    val n = readln().toInt()
+    print("Enter the elements:\n")
+    for (i in 0 until n) {
+        numbers.add(readln().toInt())
     }
-
-    // Find the largest element
-    val largest = a.maxOrNull()
-
-    // Display the largest element
-    println("Largest element = $largest")
+    val maxNumber = numbers.maxOrNull()
+    if (maxNumber != null) {
+        println("Largest element = $maxNumber")
+    } else {
+        println("The list is empty.")
+    }
 }

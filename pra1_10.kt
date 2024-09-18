@@ -28,16 +28,16 @@ class Car(
 }
 
 fun main() {
-    val car1 = Car("BMW", 2018, "Aman", 105, 100000.0)
+    val car1 = Car("BMW", 2018, "Deval", 105, 100000.0)
     car1.displayInformation()
 
-    val car2 = Car("BMW", 2019, "Karan", 20, 400000.0)
+    val car2 = Car("BMW", 2019, "Naishil", 20, 400000.0)
     car2.displayInformation()
 
     println("******* ArrayList of Car ***********")
     val carList = arrayListOf(
-        Car("Toyota", 2017, "KJS", 100, 1000000.0),
-        Car("Maruti", 2020, "NPP", 200, 4000000.0)
+        Car("Toyota", 2017, "DNP", 100, 1000000.0),
+        Car("Maruti", 2020, "ABC", 200, 4000000.0)
     )
 
     carList.forEach { it.displayInformation() }
