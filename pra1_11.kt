@@ -3,7 +3,9 @@ class Matrix(val data: Array<IntArray>) {
     val cols: Int = data[0].size
 
     operator fun plus(other: Matrix): Matrix {
-        require(rows == other.rows && cols == other.cols) { "Matrices must have the same dimensions for addition" }
+        if (rows != other.rows || cols != other.cols) {
+            throw IllegalArgumentException("Matrices must have the same dimensions for addition")
+        }
         return Matrix(Array(rows) { r ->
             IntArray(cols) { c ->
                 this.data[r][c] + other.data[r][c]
@@ -12,7 +14,9 @@ class Matrix(val data: Array<IntArray>) {
     }
 
     operator fun minus(other: Matrix): Matrix {
-        require(rows == other.rows && cols == other.cols) { "Matrices must have the same dimensions for subtraction" }
+        if (rows != other.rows || cols != other.cols) {
+            throw IllegalArgumentException("Matrices must have the same dimensions for subtraction")
+        }
         return Matrix(Array(rows) { r ->
             IntArray(cols) { c ->
                 this.data[r][c] - other.data[r][c]
@@ -21,7 +25,9 @@ class Matrix(val data: Array<IntArray>) {
     }
 
     operator fun times(other: Matrix): Matrix {
-        require(cols == other.rows) { "Number of columns in first matrix must equal number of rows in second matrix" }
+        if (cols != other.rows) {
+            throw IllegalArgumentException("Number of columns in first matrix must equal number of rows in second matrix")
+        }
         return Matrix(Array(rows) { r ->
             IntArray(other.cols) { c ->
                 (0 until cols).sumOf { k ->
